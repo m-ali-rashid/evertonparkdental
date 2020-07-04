@@ -1,0 +1,220 @@
+%img {
+  // position: relative;
+  opacity: 0.7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  &1 {
+    background: url("../images/img-showcase.jpg");
+    height: 100vh;
+    // @extend %img;
+    background-attachment: scroll;
+    position: relative;
+    opacity: 0.7;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &2 {
+    background: url("../images/bg01.jpg");
+    min-height: 400px;
+    // @extend %img;
+    position: relative;
+    opacity: 0.7;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  &3 {
+    background: url("../images/bg02.jpg");
+    min-height: 400px;
+    // @extend %img;
+    position: relative;
+    opacity: 0.7;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  &::after {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.5);
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    object-fit: cover;
+  }
+  .content {
+    position: relative;
+    z-index: 20;
+    // border: 1px green solid;
+    // position: absolute;
+    // top: 50%;
+    // width: 100%;
+    // text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    line-height: 3rem;
+    text-transform: uppercase;
+    background: rgba($color: #fff, $alpha: 0.2);
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    #logo img {
+      width: 30rem;
+    }
+  }
+  .trans {
+    background-color: transparent;
+  }
+}
+
+.section {
+  text-align: center;
+  padding: 50px 80px;
+
+  .paper {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    background-color: #f69c66;
+    background-image: url("https://www.transparenttextures.com/patterns/exclusive-paper.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    padding: 3rem;
+    text-align: justify;
+    .pimage1 {
+      position: absolute;
+      top: -30px;
+      right: -120px;
+      width: 10rem;
+      height: 10rem;
+      background: url("../images/nTaat4I.png");
+      background-position: -74px -7px;
+    }
+    .pimage2 {
+      position: absolute;
+      top: -30px;
+      left: -120px;
+      width: 10rem;
+      height: 10rem;
+      background: url("../images/2VJ7Nyd.png");
+      background-position: -25px -32px;
+      background-size: 221px;
+    }
+
+    h2 {
+      color: antiquewhite;
+      padding: 0.5rem 0;
+    }
+
+    p {
+      font-family: $fontlight;
+      padding: 0.5rem 0;
+      color: antiquewhite;
+    }
+    .signatures {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &-1 {
+    background-color: #f4f4f4;
+    color: #666;
+  }
+  &-2 {
+    background-color: #282e34;
+    color: #ddd;
+    video {
+      width: 80%;
+    }
+  }
+  &-3 {
+    background: #282e34;
+    padding: 5rem;
+
+    .inner-width {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      overflow: hidden;
+
+      .section-title {
+        text-align: center;
+        color: #ddd;
+        text-transform: uppercase;
+      }
+      .border {
+        width: 160px;
+        height: 2px;
+        background: #82ccdd;
+        margin: 40px auto;
+      }
+      .services-container {
+        display: flex;
+        // flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        .service-box {
+          max-width: 33.33%;
+          padding: 10px;
+          text-align: center;
+          color: #ddd;
+          cursor: pointer;
+
+          .service-icon {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border: 3px solid #82ccdd;
+            transform: rotate(45deg);
+            margin-bottom: 30px;
+            margin-top: 16px;
+
+            transition: all 0.4s ease;
+
+            i {
+              line-height: 70px;
+              transform: rotate(-45deg);
+              font-size: 26px;
+            }
+          }
+
+          &:hover .service-icon {
+            background: #82ccdd;
+            border-radius: 30%;
+          }
+          .service-title {
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+          }
+          .service-desc {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

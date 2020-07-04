@@ -1,0 +1,70 @@
+@import "config";
+// @import "utilities";
+// @import "buttons";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-weight: thin;
+  line-height: 1.8em;
+  color: #666;
+  font-family: $fontregular;
+  scroll-behavior: smooth;
+}
+// body,
+// html {
+//   background-color: $light-color;
+//   line-height: 1.6;
+// }
+// img {
+//   width: 100%;
+// }
+a {
+  text-decoration: none;
+}
+@import "menu";
+// @import "showcase";
+@import "sections";
+@import "mobile";
+
+.gotopbtn {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background: $secondary-color;
+  bottom: 1rem;
+  right: 2rem;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-size: 22px;
+}
+
+.whatsappbtn {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background: $secondary-color;
+  bottom: 1rem;
+  left: 2rem;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+  &:hover {
+    transform: rotate(360deg);
+    border-radius: 50%;
+  }
+}

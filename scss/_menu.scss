@@ -1,0 +1,188 @@
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+
+  .toggler {
+    margin: 1rem;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    z-index: 2;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    border: 1px solid red;
+  }
+
+  .telephone {
+    margin: 1rem;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    background: lighten($secondary-color, 10%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 2px solid white;
+    transform: rotate(90deg);
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: rotate(415deg);
+      border-radius: 50%;
+    }
+
+    a {
+      color: white;
+      width: 60px;
+      height: 60px;
+      padding: 1rem;
+      // border: 2px solid black;
+    }
+  }
+  .whatsapp {
+    margin: 1rem;
+    position: absolute;
+    bottom: 0rem;
+    left: 1rem;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    background: lighten($secondary-color, 10%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 2px solid white;
+    transform: rotate(90deg);
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+  .hamburger {
+    margin: 1rem;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    background: lighten($secondary-color, 10%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 2px solid white;
+    transition: all 0.4s ease;
+  }
+
+  //Hamburger Line
+  .hamburger > div {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+  }
+  .hamburger > div:before,
+  .hamburger > div:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+  }
+  .hamburger > div:after {
+    content: "";
+    top: 10px;
+  }
+
+  .toggler {
+    &:checked + .hamburger {
+      border-radius: 50%;
+    }
+    &:checked + .hamburger > div {
+      transform: rotate(135deg);
+      &:before,
+      &:after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+    }
+    &:checked:hover + .hamburger > div {
+      transform: rotate(225deg);
+    }
+    &:checked {
+      & ~ .menu {
+        visibility: visible;
+        & > div {
+          transform: scale(1);
+          transition-duration: 1s;
+          & > div {
+            opacity: 1;
+            transition: opacity 0.4s ease;
+          }
+        }
+      }
+    }
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > div {
+      background: $overlay-color;
+      //   border-radius: 50%;
+      width: 200vw;
+      height: 200vh;
+      display: flex;
+      flex: none;
+      align-items: center;
+      justify-content: center;
+      transform: scale(0);
+      transition: all 0.4s ease;
+
+      & > div {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+
+        & > ul > li {
+          list-style: none;
+          color: white;
+          font-size: 1.5rem;
+          padding: 1rem;
+
+          & > a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.4s ease;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+// sass --watch scss/style.scss css/style.css
+@font-face {
+  font-family: "latolight";
+  src: url("../css/fonts/Lato/Lato-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "latoregular";
+  src: url("../css/fonts/Lato/Lato-Regular.ttf") format("truetype");
+}
+
+$fontlight: latolight, sans-serif;
+$fontregular: latoregular, sans-serif;
+// $font-stack: Arial, Helvetica, sans-serif;
+$light-color: #f4f4f4;
+$primary-color: rgba(13, 110, 139, 0.75);
+$overlay-color: rgba(24, 39, 51, 0.85);
+// $primary-color: #e0ffff;
+// $primary-color: #0e6cff;
+$secondary-color: #f69c66;
+$menu-speed: 0.75s;
+
+@function set-text-color($color) {
+  @if (lightness($color) >70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+$spaceamounts: (1, 2, 3, 4, 5);
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .mx-#{$space} {
+    margin: 0 #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .px-#{$space} {
+    padding: 0 #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+}
