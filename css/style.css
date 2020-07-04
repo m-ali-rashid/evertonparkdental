@@ -1,0 +1,589 @@
+@font-face {
+  font-family: "latolight";
+  src: url("../css/fonts/Lato/Lato-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "latoregular";
+  src: url("../css/fonts/Lato/Lato-Regular.ttf") format("truetype");
+}
+.m-1 {
+  margin: 1rem;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.mx-2 {
+  margin: 0 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.px-2 {
+  padding: 0 2rem;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.mx-3 {
+  margin: 0 3rem;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.px-3 {
+  padding: 0 3rem;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.mx-4 {
+  margin: 0 4rem;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.px-4 {
+  padding: 0 4rem;
+}
+
+.py-4 {
+  padding: 4rem 0;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.mx-5 {
+  margin: 0 5rem;
+}
+
+.my-5 {
+  margin: 5rem 0;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.px-5 {
+  padding: 0 5rem;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-weight: thin;
+  line-height: 1.8em;
+  color: #666;
+  font-family: latoregular, sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+}
+.menu-wrap .toggler {
+  margin: 1rem;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  z-index: 2;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+  border: 1px solid red;
+}
+.menu-wrap .telephone {
+  margin: 1rem;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: #f9bb96;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.menu-wrap .telephone:hover {
+  transform: rotate(415deg);
+  border-radius: 50%;
+}
+.menu-wrap .telephone a {
+  color: white;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+}
+.menu-wrap .whatsapp {
+  margin: 1rem;
+  position: absolute;
+  bottom: 0rem;
+  left: 1rem;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: #f9bb96;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.menu-wrap .hamburger {
+  margin: 1rem;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: #f9bb96;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+.menu-wrap .hamburger > div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+.menu-wrap .hamburger > div:after {
+  content: "";
+  top: 10px;
+}
+.menu-wrap .toggler:checked + .hamburger {
+  border-radius: 50%;
+}
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+.menu-wrap .toggler:checked + .hamburger > div:before, .menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: 1s;
+}
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-wrap .menu > div {
+  background: rgba(24, 39, 51, 0.85);
+  width: 200vw;
+  height: 200vh;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.image1 {
+  background: url("../images/img-showcase.jpg");
+  height: 100vh;
+  background-attachment: scroll;
+  position: relative;
+  opacity: 0.7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.image2 {
+  background: url("../images/bg01.jpg");
+  min-height: 400px;
+  position: relative;
+  opacity: 0.7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.image3 {
+  background: url("../images/bg02.jpg");
+  min-height: 400px;
+  position: relative;
+  opacity: 0.7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.image::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.image video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  object-fit: cover;
+}
+.image .content {
+  position: relative;
+  z-index: 20;
+  color: #000;
+  font-size: 27px;
+  letter-spacing: 8px;
+  line-height: 3rem;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+.image .content #logo img {
+  width: 30rem;
+}
+.image .trans {
+  background-color: transparent;
+}
+
+.section {
+  text-align: center;
+  padding: 50px 80px;
+}
+.section .paper {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #f69c66;
+  background-image: url("https://www.transparenttextures.com/patterns/exclusive-paper.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  padding: 3rem;
+  text-align: justify;
+}
+.section .paper .pimage1 {
+  position: absolute;
+  top: -30px;
+  right: -120px;
+  width: 10rem;
+  height: 10rem;
+  background: url("../images/nTaat4I.png");
+  background-position: -74px -7px;
+}
+.section .paper .pimage2 {
+  position: absolute;
+  top: -30px;
+  left: -120px;
+  width: 10rem;
+  height: 10rem;
+  background: url("../images/2VJ7Nyd.png");
+  background-position: -25px -32px;
+  background-size: 221px;
+}
+.section .paper h2 {
+  color: antiquewhite;
+  padding: 0.5rem 0;
+}
+.section .paper p {
+  font-family: latolight, sans-serif;
+  padding: 0.5rem 0;
+  color: antiquewhite;
+}
+.section .paper .signatures {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-1 {
+  background-color: #f4f4f4;
+  color: #666;
+}
+.section-2 {
+  background-color: #282e34;
+  color: #ddd;
+}
+.section-2 video {
+  width: 80%;
+}
+.section-3 {
+  background: #282e34;
+  padding: 5rem;
+}
+.section-3 .inner-width {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.section-3 .inner-width .section-title {
+  text-align: center;
+  color: #ddd;
+  text-transform: uppercase;
+}
+.section-3 .inner-width .border {
+  width: 160px;
+  height: 2px;
+  background: #82ccdd;
+  margin: 40px auto;
+}
+.section-3 .inner-width .services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.section-3 .inner-width .services-container .service-box {
+  max-width: 33.33%;
+  padding: 10px;
+  text-align: center;
+  color: #ddd;
+  cursor: pointer;
+}
+.section-3 .inner-width .services-container .service-box .service-icon {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border: 3px solid #82ccdd;
+  transform: rotate(45deg);
+  margin-bottom: 30px;
+  margin-top: 16px;
+  transition: all 0.4s ease;
+}
+.section-3 .inner-width .services-container .service-box .service-icon i {
+  line-height: 70px;
+  transform: rotate(-45deg);
+  font-size: 26px;
+}
+.section-3 .inner-width .services-container .service-box:hover .service-icon {
+  background: #82ccdd;
+  border-radius: 30%;
+}
+.section-3 .inner-width .services-container .service-box .service-title {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.section-3 .inner-width .services-container .service-box .service-desc {
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  #logo img {
+    max-width: 100%;
+  }
+
+  .section-1 {
+    padding: 0;
+  }
+  .section-1 .paper {
+    width: 100%;
+    padding-top: 11rem;
+  }
+  .section-1 .paper .pimage1 {
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+  }
+  .section-1 .paper .pimage2 {
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+  }
+
+  .section-2 {
+    padding: 0;
+  }
+  .section-2 h2 {
+    padding-top: 2rem;
+  }
+  .section-2 video {
+    width: 100%;
+  }
+
+  .services-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .services-container .service-box {
+    min-width: 100%;
+  }
+}
+.gotopbtn {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background: #f69c66;
+  bottom: 1rem;
+  right: 2rem;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-size: 22px;
+}
+
+.whatsappbtn {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background: #f69c66;
+  bottom: 1rem;
+  left: 2rem;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.whatsappbtn:hover {
+  transform: rotate(360deg);
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=style.css.map */
